@@ -1,0 +1,30 @@
+{
+  "Routes": [
+    {
+      //  Microservice Route : service Post
+      "DownstreamPathTemplate": "/api/Post/all",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5268
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/Post",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Post/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5268
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/Post/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    }
+  ]
+
+}
